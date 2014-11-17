@@ -2,7 +2,9 @@ window.Pokedex = (window.Pokedex || {});
 window.Pokedex.Models = {};
 window.Pokedex.Collections = {};
 
-Pokedex.Models.Pokemon = null; // WRITE ME
+Pokedex.Models.Pokemon = Backbone.Model.extends({
+  urlRoot: "/pokemon"
+}); // WRITE ME
 
 Pokedex.Models.Toy = null; // WRITE ME IN PHASE 2
 
