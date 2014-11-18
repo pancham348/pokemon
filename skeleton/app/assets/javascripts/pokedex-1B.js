@@ -3,7 +3,7 @@ Pokedex.RootView.prototype.renderPokemonDetail = function (pokemon) {
  //  $pokemonLi.append(pokemon.get("name") + " " + pokemon.get("poke_type"));
  //  $pokemonLi.addClass("poke-list-item");
  //  this.$pokeList.append($pokemonLi);
-
+ this.$pokeDetail.empty();
   var $pokemonDiv = $("<div></div>");
   $pokemonDiv.addClass("detail");
   var $pokemonImg = $("<img>").attr("src", pokemon.get("image_url")).attr(
@@ -21,14 +21,14 @@ Pokedex.RootView.prototype.renderPokemonDetail = function (pokemon) {
 };
 
 Pokedex.RootView.prototype.selectPokemonFromList = function (event) {
-  //listen for clicks
   //when a user clicks on a pokemon, render that pokem
-  console.log(event);
   console.log(event.currentTarget)
-  
-  //give id to pokemon bullshting
+  var pokeId = $(event.currentTarget).attr("data-id");
+  console.log(pokeId);
+  var pokemon = this.pokes.get(pokeId);
   //get the id from event.target to look up the pokemon in the list
   //render the pokermon detail we have
+  this.renderPokemonDetail(pokemon);
 };
 
 Pokedex.RootView.prototype.clickListener = function(){
