@@ -46,6 +46,7 @@ window.Pokedex.RootView = function ($el) {
 
   // Click handlers go here.
   this.clickListener();
+  this.submitListener();
 };
 
 $(function() {
