@@ -21,13 +21,8 @@ Pokedex.RootView.prototype.renderPokemonDetail = function (pokemon) {
 };
 
 Pokedex.RootView.prototype.selectPokemonFromList = function (event) {
-  //when a user clicks on a pokemon, render that pokem
-  console.log(event.currentTarget)
   var pokeId = $(event.currentTarget).attr("data-id");
-  console.log(pokeId);
   var pokemon = this.pokes.get(pokeId);
-  //get the id from event.target to look up the pokemon in the list
-  //render the pokermon detail we have
   this.renderPokemonDetail(pokemon);
 };
 
