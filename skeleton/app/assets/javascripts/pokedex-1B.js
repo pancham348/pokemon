@@ -21,5 +21,16 @@ Pokedex.RootView.prototype.renderPokemonDetail = function (pokemon) {
 };
 
 Pokedex.RootView.prototype.selectPokemonFromList = function (event) {
+  //listen for clicks
+  //when a user clicks on a pokemon, render that pokem
+  console.log(event);
+  console.log(event.currentTarget)
   
+  //give id to pokemon bullshting
+  //get the id from event.target to look up the pokemon in the list
+  //render the pokermon detail we have
 };
+
+Pokedex.RootView.prototype.clickListener = function(){
+  this.$el.on("click", ".poke-list-item", this.selectPokemonFromList.bind(this))
+}
